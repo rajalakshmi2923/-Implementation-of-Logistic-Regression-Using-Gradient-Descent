@@ -59,12 +59,12 @@ xs,ys=xtrain,ytrain
 x1,x2=np.meshgrid(np.arange(start=xs[:,0].min()-1,stop=xs[:,0].max()+1,step=0.01),
                np.arange(start=xs[:,1].min()-1,stop=xs[:,1].max()+1,step=0.01))
 plt.contourf(x1,x2,c.predict(np.array([x1.ravel(),x2.ravel()]).T).reshape(x1.shape),
-                            alpha=0.75,cmap=ListedColormap(("skyblue","green")))
+                            alpha=0.75,cmap=ListedColormap(('skyblue','green')))
 plt.xlim(x1.min(),x2.max())
 plt.ylim(x2.min(),x1.max())
 for i,j in enumerate(np.unique(ys)):
     plt.scatter(xs[ys==j,0],xs[ys==j,1],
-                c=ListedColormap(("black","white"))(i),label=j)
+                c=ListedColormap(('black','white'))(i),label=j)
 plt.title("Logistic Regression(Training Set)")
 plt.xlabel("Age")
 plt.ylabel("Estimated Salary")
